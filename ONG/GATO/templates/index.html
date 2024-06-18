@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda a un peludo - Adopción de animales</title>
+    <link rel="stylesheet" href="{% static '/css/estilo.css' %}">
+</head>
+<body style="background-color: rgb(46, 170, 186); text-align: center;">
+    <header>
+        <h1>
+            <h1 >ayuda a un peludo</h1>
+        </h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+           
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listadeperros.html  ">Perros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listadegatos.html">gatos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+              
+    </header>
+
+    <main>
+        <p style="font-size: 25px;">ONG dedicada a la adopción de animales que viven en la calle</p>
+        <h2>Equipo</h2>
+        <ul>
+            <p>Francisco Calfun - Líder de ONG</p>
+            <p>Bárbara Ortega- Ayudante </p>
+        </ul>
+        <h2>Categorías de animales disponibles para adopción:</h2>
+        <a href="../listadeperros">
+            <img src="../static/images/grupodeperros.png" alt="Perros" height="180px">
+            <p>Ver perros disponibles para adopción</p>
+        </a>
+        <a href="../listadegatos.html">
+            <img src="../static/images/grupodegatos.png" alt="Gatos" height="130px">
+            <p>Ver gatos disponibles para adopción</p>
+        </a>
+    </main>
+</body>
+
+</html>
+
