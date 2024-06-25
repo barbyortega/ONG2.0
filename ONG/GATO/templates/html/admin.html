@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración</title>
+</head>
+<body>
+    <h1>Panel de Administración de mascotas</h1>
+    <button type="button">
+        <a href="{% url 'agregarMascota' %}">Agregar mascota</a>
+    </button>
+    <div id="idMensaje">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+    <table>
+        {% if mascota %}
+        <th>ID MASCOTA</th>
+        <th>NOMBRE</th>
+        <th>FECHA NACIMIENTO</th>
+        <th>RAZA</th>
+        <th>SEXO</th>
+        <th>MODIFICAR</th>
+        <th>ELIMINAR</th>
+
+        {% for m in mascota %}
+
+        <tr>
+            <td>{{m.id_mascota}}</td>
+            <td>{{m.nombre_mascota}}</td>
+            <td>{{m.fecha_nacimiento}}</td>
+            <td>{{m.raza_mascota}}</td>
+            <td>{{m.id_genero.genero}}</td>
+            <td><a href="{% url 'encontrarMascota' pk=m.id_mascota %}">Modificar</a></td>
+            <td><a href="{% url 'eliminarMascota'  pk=m.id_mascota %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    {% endif %}    
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js" integrity="sha512-J9QfbPuFlqGD2CYVCa6zn8/7PEgZnGpM5qtFOBZgwujjDnG5w5Fjx46YzqvIh/ORstcj7luStvvIHkisQi5SKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $("idMensaje").delay(3000).fadeOut("slow");
+        });
+    </script>
+</body>
+</html>

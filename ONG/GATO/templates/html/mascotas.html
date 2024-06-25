@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mascotas</h1>
+    {% for m in mascota %}
+    
+        <br>*Nombre: {{m.nombre_mascota}}<br>
+        *Fecha nacimiento: {{m.fecha_nacimiento}}<br>
+        *Raza: {{m.raza_mascota}}<br>
+        *Sexo: {{m.id_sexo.sexo}} <br>
+        {% endfor %}
+</body>
+</html>

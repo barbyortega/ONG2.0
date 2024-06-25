@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width==device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Agregar nueva mascota</h1>
+    <form action="agregarMascota" method="post">
+        {% csrf_token %}
+
+        <pre>ID mascota:                        <input type="text" name="idMascota"></pre>
+        <pre>Nombre mascota:                    <input type="text" name="nombreMascota"></pre>
+        <pre>Fecha nacimiento:                  <input type="date" name="fechaNac"></pre>
+        <pre>Raza mascota:                      <input type="text" name="razaMascota"></pre>
+        <pre>Sexo mascota:                      <select name="sexo">
+            {% for s in sexo %}
+                <option value="{{s.id_sexo}}">{{s.sexo}}</option>
+            {% endfor %}</select></pre>
+        <input type="submit" name="opcion" value="Agregar">
+
+    </form>
+    <br></bra><a href="{% url 'admin' %}">Volver a Administración</a>
+
+    <div id="idMensaje">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+</html>
